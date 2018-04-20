@@ -29,13 +29,22 @@ app.use((req,res, next)=>{
 hbs.registerHelper('getCurrentYear',()=>{
   return new Date().getFullYear();
 });
+
 app.get('/',(req,res)=>{
-  res.send('Hi , Express from dj');
+res.render('home.hbs',{
+  pageTitile:'Home Page'
+});
 });
 
 app.get('/about',(req,res)=>{
   res.render('about.hbs',{
     pageTitile:'About Page'
+  });
+});
+
+app.get('/projects',(req,res)=>{
+  res.render('projects.hbs',{
+    pageTitile:'Projects'
   });
 });
 
